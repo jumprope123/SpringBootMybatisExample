@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="shin.spring.mvc.mapper.IndexMapper">
+    <resultMap id="indexResult" type="shin.spring.mvc.vo.MemberVO">
+        <result property="user" column="user"/>
+        <result property="passwd" column="passwd"/>
+        <result property="name" column="name"/>
+        <result property="grade" column="grade"/>
+        <result property="regdate" column="regdate"/>
+    </resultMap>
+
+    <select id="selectOneMember" statementType="PREPARED" resultMap="indexResult">
+        select * from member limit 0,1;
+    </select>
+
+</mapper>
